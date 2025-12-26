@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hide Lovable badge */
+[id*="lovable"], 
+[class*="lovable"], 
+[class*="Edit"], 
+button[aria-label*="Lovable"], 
+button[title*="Lovable"], 
+button[aria-label*="edit"], 
+button[title*="edit"], 
+[aria-label*="edit"], 
+[title*="edit"], 
+div[class*="lovable"], 
+div[class*="edit"], 
+.edit-with-lovable {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  width: 0 !important;
+  height: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 0 0% 98%;
+
+    --card: 222 40% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 222 40% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 25 95% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 142 71% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 222 30% 20%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 222 30% 18%;
+    --input: 222 30% 18%;
+    --ring: 25 95% 53%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(222 47% 11%) 0%, hsl(222 47% 8%) 50%, hsl(25 95% 20%) 100%);
+    --gradient-section: linear-gradient(180deg, hsl(222 47% 11%) 0%, hsl(222 40% 8%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(25 95% 53%) 0%, hsl(25 95% 48%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(142 71% 45%) 0%, hsl(142 71% 40%) 100%);
+
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(25 95% 53% / 0.3);
+    --shadow-card: 0 10px 40px -10px hsl(0 0% 0% / 0.5);
+    --shadow-elegant: 0 20px 60px -15px hsl(25 95% 53% / 0.2);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+
+  h1 {
+    @apply text-5xl md:text-7xl leading-tight;
+  }
+
+  h2 {
+    @apply text-4xl md:text-5xl leading-tight;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
